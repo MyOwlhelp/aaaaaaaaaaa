@@ -2183,7 +2183,8 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 					task.wait() -- TODO Maybe remove?
 				end
 
-				local ok, result = run_with_loading("Decompiling " .. script.Name, true, nil, decomp, script)
+				local ok, result = run_with_loading("Saving (%s)", get_size_format()), true, nil, decomp, script)
+				-- local ok, result = run_with_loading("Decompiling " .. script.Name, true, nil, decomp, script)
 				if not result then
 					ok, result = false, "Empty Output"
 				end
@@ -3134,7 +3135,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		StatusText.Font = Enum.Font.Code
 		StatusText.AnchorPoint = Vector2.new(1)
 		StatusText.Position = UDim2.new(1)
-		StatusText.Size = UDim2.new(0.4, 0, 0, 30)
+		StatusText.Size = UDim2.new(0.3, 0, 0, 20)
 
 		StatusText.TextColor3 = Color3.new(1, 1, 1)
 		StatusText.TextScaled = true
