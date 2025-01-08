@@ -3126,23 +3126,32 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 			StatusGui.OnTopOfCoreBlur = true
 		end)
 
-		local StatusText = Instance.new("TextLabel")
+		StatusText = Instance.new("TextLabel")
 
 		StatusText.Text = "Saving..."
 
 		StatusText.BackgroundTransparency = 1
 		StatusText.Font = Enum.Font.Code
-		StatusText.AnchorPoint = Vector2.new(0.5, 0) -- Center horizontally, top vertically
-		StatusText.Position = UDim2.new(0.5, 0, 0, 20) -- Center horizontally, top with some padding
+		StatusText.AnchorPoint = Vector2.new(1)
+		StatusText.Position = UDim2.new(1)
 		StatusText.Size = UDim2.new(0.3, 0, 0, 20)
 
 		StatusText.TextColor3 = Color3.new(1, 1, 1)
 		StatusText.TextScaled = true
 		StatusText.TextStrokeTransparency = 0.7
-		StatusText.TextXAlignment = Enum.TextXAlignment.Center -- Center text horizontally
-		StatusText.TextYAlignment = Enum.TextYAlignment.Top -- Top align text vertically
+		StatusText.TextXAlignment = Enum.TextXAlignment.Center
+		StatusText.TextYAlignment = Enum.TextYAlignment.Top
 
 		StatusText.Parent = StatusGui
+
+		local textStates = {"Saving...", "Saving..\n.", "Saving.\n.\n."}
+		local currentIndex = 1
+
+		while true do
+    		StatusText.Text = textStates[currentIndex]
+    		currentIndex = (currentIndex % #textStates) + 1
+    		wait(0.5) -- Change the delay time as needed
+		end
 
 		local function randomString()
 			local length = math.random(10, 20)
