@@ -3132,8 +3132,8 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		StatusText.BackgroundTransparency = 1
 		StatusText.Font = Enum.Font.Code
-		StatusText.AnchorPoint = Vector2.new(1)
-		StatusText.Position = UDim2.new(1)
+		StatusText.AnchorPoint = Vector2.new(0.5, 0)
+		StatusText.Position = UDim2.new(0.5, 0, 0, 20)
 		StatusText.Size = UDim2.new(0.3, 0, 0, 20)
 
 		StatusText.TextColor3 = Color3.new(1, 1, 1)
