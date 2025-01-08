@@ -3128,7 +3128,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		StatusText = Instance.new("TextLabel")
 
-		StatusText.Text = "Saving..."
+		StatusText.Text = string.format("Saving (%s)", get_size_format())
 
 		StatusText.BackgroundTransparency = 1
 		StatusText.Font = Enum.Font.Code
