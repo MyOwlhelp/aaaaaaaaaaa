@@ -3132,14 +3132,14 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		StatusText.BackgroundTransparency = 1
 		StatusText.Font = Enum.Font.Code
-		StatusText.AnchorPoint = Vector2.new(0.5, 0)
-		StatusText.Position = UDim2.new(0.5, 0, 0, 20)
+		StatusText.AnchorPoint = Vector2.new(1)
+		StatusText.Position = UDim2.new(1)
 		StatusText.Size = UDim2.new(0.4, 0, 0, 30)
 
 		StatusText.TextColor3 = Color3.new(1, 1, 1)
 		StatusText.TextScaled = true
 		StatusText.TextStrokeTransparency = 0.7
-		StatusText.TextXAlignment = Enum.TextXAlignment.Center
+		StatusText.TextXAlignment = Enum.TextXAlignment.Right
 		StatusText.TextYAlignment = Enum.TextYAlignment.Top
 
 		StatusText.Parent = StatusGui
