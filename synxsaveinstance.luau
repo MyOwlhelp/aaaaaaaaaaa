@@ -3144,15 +3144,6 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 
 		StatusText.Parent = StatusGui
 
-		local textStates = {"Saving...", "Saving..\n.", "Saving.\n.\n."}
-		local currentIndex = 1
-
-		while true do
-    		StatusText.Text = textStates[currentIndex]
-    		currentIndex = (currentIndex % #textStates) + 1
-    		wait(0.5) -- Change the delay time as needed
-		end
-
 		local function randomString()
 			local length = math.random(10, 20)
 			local randomarray = table.create(length)
