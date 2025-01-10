@@ -8,43 +8,6 @@ local function string_find(s, pattern)
 	return string.find(s, pattern, nil, true)
 end
 
-local Decompile do
-  local Success, Decompile_Source = pcall(function()
-    return game:HttpGet("https://raw.githubusercontent.com/MyOwlhelp/owhduwsdk/refs/heads/SynX/advanced-decompiler-v3-modded.lua", true)
-  end)
-  
-  if Success then
-    local CONSTANTS = [[
-local ENABLED_REMARKS = {
-  NATIVE_REMARK = true,
-  INLINE_REMARK = true
-}
-
-local DECOMPILER_TIMEOUT = 99999999
-
-local READER_FLOAT_PRECISION = 99 -- up to 99
-local SHOW_INSTRUCTION_LINES = false
-local SHOW_REFERENCES = true
-local SHOW_OPERATION_NAMES = false
-local SHOW_MISC_OPERATIONS = false
-local LIST_USED_GLOBALS = true
-local RETURN_ELAPSED_TIME = true]]
-   
-    xpcall(function()
-      return loadstring(
-        string.gsub(
-          string.gsub(
-            Decompile_Source, "return %(x %% 2^32%) // %(2^disp%)", "return math.floor((x %% 2^32) / (2^disp))", 1
-          ), ";;CONSTANTS HERE;;", CONSTANTS
-        ), "Advanced-Decompiler-V3"
-      )()
-    end, warn)
-    
-    local _ENV = (getgenv or getrenv or getfenv)()
-    Decompile = _ENV.decompile
-  end
-end
-
 local function ArrayToDictionary(t, hydridMode, valueOverride, typeStrict)
 	local tmp = {}
 
@@ -2431,7 +2394,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		end
 
 		if StatusText then
-			StatusText.Text = "Saving.. Size: " .. get_size_format()
+			StatusText.Text = "Saving..(" .. get_size_format() .. ")"
 		end
 		-- ? Needed for at least 1fps (status text)
 		-- task.wait()
@@ -2949,7 +2912,6 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 				v.CollisionFidelity = D
 			end
 		end
-		print("Done")
 				
 		If you can't move the Camera, run this script in the Studio Command Bar:
 			
