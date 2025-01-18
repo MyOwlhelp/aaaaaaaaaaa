@@ -1616,7 +1616,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 	local currentstr, currentsize, totalsize, chunks = "", 0, 0, table.create(1)
 	local savebuffer, savebuffer_size =
 		{
-			'<!-- Saved by Synapse X SaveInstance https://discord.gg/wx4ThpAsmw --><roblox version="4">',
+			'<!-- Saved by Atlas Executor SaveInstance. --><roblox version="4">',
 		}, 2
 
 	local StatusText
@@ -2773,7 +2773,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 											end
 										end
 
-										value = "-- Saved by Synapse X SaveInstance https://discord.gg/wx4ThpAsmw\n\n"
+										value = "-- Saved by Atlas Executor SaveInstance.\n\n"
 											.. (hasLinkedSource and "-- Original Source: https://assetdelivery.roblox.com/v1/asset/?" .. (LinkedSource_type or "id") .. "=" .. (LinkedSource or LinkedSource_Url) .. "\n\n" or "")
 											.. value
 									end
@@ -2937,7 +2937,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 						RecoveredScripts
 						) .. "\n" or "")
 					.. [[
-		Thank you for using Synapse X SaveInstance https://discord.gg/wx4ThpAsmw.
+		Thank you for using Atlas Executor SaveInstance.
 
 		If you didn't save in Binary (rbxl) - it's recommended to save the game right away to take advantage of the binary format & to preserve values of certain properties if you used IgnoreDefaultProperties setting (as they might change in the future).
 		You can do that by going to FILE -> Save to File As -> Make sure File Name ends with .rbxl -> Save
@@ -2951,7 +2951,6 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		Or run `game:GetService("Chat"):ClearAllChildren() game:GetService("TextChatService"):ClearAllChildren()`
 				
 		If Union and MeshPart collisions don't work, run the script below in the Studio Command Bar:
-				
 				
 		local C = game:GetService("CoreGui")
 		local D = Enum.CollisionFidelity.Default
@@ -2997,7 +2996,7 @@ local function synsaveinstance(CustomOptions, CustomOptions2)
 		end
 
 		savebuffer[savebuffer_size] =
-			"</roblox><!-- Saved by Synapse X SaveInstance https://discord.gg/wx4ThpAsmw -->"
+			"</roblox><!-- Saved by Atlas Executor SaveInstance. -->"
 		savebuffer_size += 1
 		save_cache(true)
 		do
