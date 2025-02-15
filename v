@@ -380,12 +380,28 @@
           "type": "Method",
           "description": "Returns a table containing the following information about the function:\n + source - The name of the script the function was defined in\n+ what - Where the function originates from (Lua or C/C++)\n+ func - The passed in function\n+ short_src - The name of the script in a format that can be used in error messages\n+ name - The name of the function\n+ nups - The number of upvalues in the function\nAlthough more information is given, that information is pointless since it has the same values for every function.",
           "insert": "debug.getinfo"
-      },
-      "infiniteyield": {
-          "label": "infiniteyield",
-          "type": "Method",
-          "description": "opens up infiniteyield synapse x",
-          "insert": "infiniteyield"
       }
+  },
+  "drawing_library": {
+      "Drawing.new": {
+          "label": "Drawing.new(type);",
+          "type": "Method",
+          "description": "Creates a new drawing object with type. Returns the object.",
+          "insert": "Drawing.new"
+      } 
+  },
+  "salad_library": {
+    "salad.get_player_by_name": {
+        "label": "salad.get_player_by_name(username);",
+        "type": "Method",
+        "description": "Gets a player by their display name or username.",
+        "insert": "salad.get_player_by_name"
+    },
+    "infiniteyield": {
+        "label": "infiniteyield;",
+        "type": "Method",
+        "description": "Opens up infinite yield synapse x edition (must have synapse functions)",
+        "insert": "infiniteyield"
+    }
 }
 }
