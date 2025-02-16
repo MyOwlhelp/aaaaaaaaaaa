@@ -4325,7 +4325,7 @@ CMDs = {}
 CMDs[#CMDs + 1] = {NAME = 'synapsexreal' , DESC = 'Opens Synapse X'}
 CMDs[#CMDs + 1] = {NAME = 'syndex / dex' , DESC = 'Opens DEX Synapse Edition'}
 CMDs[#CMDs + 1] = {NAME = 'saveinstance', DESC = 'Uses Synapse X saveinstance function to save the game'}
--- CMDs[#CMDs + 1] = {NAME = 'pfling [player]', DESC = 'Tp to the player and fling them'}
+CMDs[#CMDs + 1] = {NAME = 'heal / health [input]', DESC = 'Heal yourself'}
 CMDs[#CMDs + 1] = {NAME = 'flynoclip / flnoc' , DESC = 'Opens HD Admin Noclip UI'}
 CMDs[#CMDs + 1] = {NAME = 'backdoor' , DESC = 'Opens backdoorV8'}
 CMDs[#CMDs + 1] = {NAME = 'kick [player] (CLIENT)', DESC = 'Kicks a player'}
@@ -10675,6 +10675,19 @@ addcmd('olddex', {'odex'}, function(args, speaker)
 	Load(Dex)
 end)
 
+addcmd('heal', {'health'}, function(args)
+	local player = game:GetService("Players").LocalPlayer
+	local char = player.Character
+	local humanoid = char and char:FindFirstChild("Humanoid")
+
+	if humanoid and args[1] then
+		local healthValue = tonumber(args[1])
+		if healthValue then
+			humanoid.Health = healthValue
+		end
+	end
+end)
+
 addcmd('remotespy',{'rspy'},function(args, speaker)
 	notify("Loading",'Hold on a sec')
 	-- Full credit to exx, creator of SimpleSpy
@@ -13256,5 +13269,6 @@ task.spawn(function()
 	IntroBackground:Destroy()
 	minimizeHolder()
 	if IsOnMobile then 
+		print("Synapse X is initialized.")
 	end
 end)
